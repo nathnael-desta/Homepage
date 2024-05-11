@@ -1,0 +1,338 @@
+@font-face {
+    font-family: myThin;
+    src: url("./Assets/fonts/Roboto-Thin.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: myRegular;
+    src: url("./Assets/fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: myThinItalic;
+    src: url("./Assets/fonts/Roboto-ThinItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: myRegular;
+}
+
+body 
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    .top {
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 3rem 6rem 6.5rem ;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+
+        align-items: center;
+        max-width: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -70%;
+            left: -15%;
+            width: 250%;
+            height: 135%;
+            background-color: #0891B2;
+            rotate: -9deg;
+            z-index: -1;
+            box-shadow: 3px 5px 6px  rgb(0 0 0 / 25%);
+            overflow: hidden;
+
+        }
+
+        .left {
+            flex: 1;
+            height: 35rem;
+            background-image: url(./Assets/actual\ top\ image.jpg);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 4px 2px 4px rgb(0 0 0 / 25%);
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "Ashley Williams";
+                color: white;
+                font-size: calc(0.8 * 5vw);
+                bottom: 0.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+                
+
+            }
+
+            /* img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit:cover;
+            } */
+        }
+
+        .right {
+            flex: 1.3;
+            height: 29rem;
+            background-color: white;
+            box-shadow: 3px 5px 5px rgb(0 0 0 / 25%);
+            padding: 3.5em 2em;
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+            position: relative;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            color: #212427a8; 
+                
+
+            /* .leftFloater {
+                height: 35rem;
+                width: 20rem;
+            background-image: url(./Assets/actual\ top\ image.jpg);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 4px 2px 4px rgb(0 0 0 / 25%);
+            position: absolute;
+            top: -20%;
+            left: -20%;
+
+            /* &::before {
+                position: absolute;
+                content: "Ashley Williams";
+                color: white;
+                font-size: calc(0.8 * 5vw);
+                bottom: 0.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+                
+
+            } */
+            } 
+
+            .heading {
+                font-size: 2.5rem;
+                color: #212427; 
+            }
+
+            .paragraph{
+                
+            }
+
+            .icons {
+                position: absolute;
+                gap: 1.3rem;
+                padding-top: 2.5rem;
+                right: 2rem;
+                bottom: 1rem;
+                display: flex;
+                gap: 1rem;
+                cursor: pointer;
+                
+                svg {
+                    width: 3rem;
+                    height: auto;
+                    
+                }
+            }
+        }
+    }
+
+    .middle {
+        padding: 0rem 5rem 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+
+        .heading {
+            font-size: 2.5rem;
+        }
+
+        .work {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+
+            & > div {
+                background-color: purple;   
+                height: 30rem;
+                display: flex;
+                align-items: end;
+                box-shadow: 3px 3px 12px rgb(0 0 0 / 20%);
+                position: relative;
+                max-width: 550px;
+
+                .project {
+                    background-color: white;
+                    height: 11rem;
+                    align-items: end;
+                    width: 100%;
+                    
+                    padding: 1.25rem 2em;
+                    
+
+                    .above {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 1.5rem;
+                        color: rgba(0, 0, 0, 0.863);
+
+                        .icons {
+                            display: flex;
+                            gap: 1rem;
+                            cursor: pointer;
+
+                            svg {
+                                width: 2rem;
+                                height: auto;
+                                
+                            }
+                        }
+                    }
+
+                    .description {
+                        padding: 1rem 0;
+
+                        color: rgba(0, 0, 0, 0.61);
+                    }
+
+                    
+                }
+
+                
+
+                &::before {
+                    position: absolute;
+                    content: "screenshot of project";
+                    color: white;
+                    font-size: 2.8rem;
+                    top: 6rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+
+                }
+
+            }
+
+            .p1 {
+                background-color: #9E1C1C;
+            }
+
+            .p2 {
+                background-color: #7C75CA;
+            }
+
+            .p3 {
+                background-color: #5E8F4D;
+            }
+
+            .p4 {
+                background-color: #C363B4;
+            }
+
+            .p5 {
+                background-color: #D88F39;
+            }
+
+            .p6 {
+                background-color: #4BA2D2;
+            }
+
+
+        }
+    }
+
+    .bottom {
+        padding: 4rem 4rem ;
+        background-color: #0891B2;
+        display: flex;
+        
+        .text {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            font-size: 1.5rem;
+
+            .contact {
+                font-size: 3.5rem;
+            }
+
+            .please {
+                width: 80%;
+            }
+
+            .phone {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .email {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            svg {
+                width: 2rem;
+                fill: white;
+            }
+
+            .icons {
+                display: flex;
+                gap: 2rem;
+                padding: 1rem 0 ;
+                svg {
+                    width: 3.5rem;
+                    fill: black;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        .imgDiv {
+            width: 100%;
+            background-image: url(./Assets/actual\ bottom\ image.jpg); 
+            background-size: cover;
+            background-position: center;
+
+            height: 35rem;  
+        }
+        
+
+
+
+    }
+}
+
+@media (max-width: 1000px) {
+
+}
