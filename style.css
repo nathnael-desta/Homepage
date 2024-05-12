@@ -27,7 +27,9 @@
     font-family: myRegular;
 }
 
-body 
+body {
+
+} 
 
 body::-webkit-scrollbar {
     display: none;
@@ -36,18 +38,22 @@ body::-webkit-scrollbar {
 .main {
     display: flex;
     flex-direction: column;
+    min-width: 100dvh;  /*........................................................................................................ just using dvh fixed the issue where 100vw isn't the full width for screen*/
 
     .top {
-        
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 3rem 6rem 6.5rem ;
+        padding: 3rem 6rem 6.5rem;
         position: relative;
         display: flex;
         overflow: hidden;
 
         align-items: center;
         max-width: 100%;
+        
+
+
+        
 
         &::before {
             content: "";
@@ -64,9 +70,29 @@ body::-webkit-scrollbar {
 
         }
 
+        
+
+        @media (max-width: 1000px) {
+            & {
+                padding: 3rem 2rem 14.5rem;
+                margin-bottom: 150px;
+            }
+
+            &::before {
+                left: -45%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            & {
+                padding: 0;
+                margin: 0;
+                
+            }
+        }
+
         .topContent {
             height: 29rem;
-
             
             position: relative;
             font-size: 1.2rem;
@@ -74,7 +100,6 @@ body::-webkit-scrollbar {
             color: #212427a8; 
             
             height: max-content;
-            flex-direction: column;
 
             padding-right: 2rem;
 
@@ -91,34 +116,73 @@ body::-webkit-scrollbar {
                 box-shadow: 3px 5px 5px rgb(0 0 0 / 25%);
             }
 
-            
+            @media (max-width: 1000px) {
+                &::before {
+                    bottom: -15%;
+                    top: 18%;
+                    left: 10%;
+                    box-shadow: 5px 6px 10px rgb(0 0 0 / 25%) , -3px 0px 8px rgb(0 0 0 / 25%);
+                    
 
-            
-                
+                }
+            }
+
+            @media (max-width:500px) {
+                & {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0;
+                    border: 2px solid green;
+                    margin: 0;
+                }
+            }
 
             .leftFloater {
                 height: 36.4rem;
                 /* width: 29.2rem; */
                 width: 44.1%;
-            background-image: url(./Assets/actual\ top\ image.jpg);
-            background-size: cover;
-            background-position: center;
-            box-shadow: 4px 2px 4px rgb(0 0 0 / 25%);
-            float: left;
-            margin-right: 1.5rem;
-            position: relative;
+                /* background-image: url(./Assets/actual\ top\ image.jpg);
+                background-size: cover;
+                background-position: center; */
+                box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+                float: left;
+                margin-right: 1.5rem;
+                position: relative;
 
-             &::before {
-                position: absolute;
-                content: "Ashley Williams";
-                color: white;
-                font-size: calc(0.8 * 5vw);
-                bottom: 1.5rem;
-                left: 50%;
-                transform: translateX(-50%);
-                white-space: nowrap;
-                
-            } 
+                @media (max-width: 500px) {
+                    & {
+                        float: none;
+                        margin: 0;
+                        padding: 0;
+                        border: 1px solid red;
+                        
+
+                    }
+                }
+
+                @media (max-width: 1000px) {
+                    & {
+                        width: 54%;
+                        height: 34rem;
+                        float: left;
+                        margin-right: 2rem;
+                        margin-bottom: 1rem;
+                        box-shadow: 8px 8px 8px rgb(0 0 0 / 25%);
+                    }
+                }
+
+                &::before {
+                    position: absolute;
+                    content: "Ashley Williams";
+                    color: white;
+                    font-size: calc(0.8 * 5vw);
+                    bottom: 1.5rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    white-space: nowrap;
+                    
+                } 
 
             } 
 
@@ -129,11 +193,32 @@ body::-webkit-scrollbar {
                 display: block;
                 padding-top: 8rem;
                 padding-bottom: 2.5rem;
+
+                @media (max-width: 1000px) {
+                    & {
+                        font-size: 250%; /*some*/
+                        padding-top: 4.5em;
+                        padding-bottom: 1.5rem;
+                        line-height: 3rem;
+                    }
+                    
+                }
+
             } 
 
             .paragraph{
                 /* padding-top: 40rem;
                 margin-right: 20rem; */
+
+                @media (max-width: 1000px) {
+                    & {
+                        font-size: 120%;
+                        display: block;
+                        padding-left: 6em;
+                        
+                        line-height: 2em;
+                    }
+                }
                 
             }
 
@@ -146,6 +231,10 @@ body::-webkit-scrollbar {
                 display: flex;
                 gap: 1rem;
                 cursor: pointer;
+
+                @media (max-width: 1000px) {
+                    display: none;
+                }
                 
                 svg {
                     width: 3rem;
@@ -156,21 +245,45 @@ body::-webkit-scrollbar {
         }
     }
 
+    
+
     .middle {
         padding: 0rem 5rem 5rem;
         display: flex;
         flex-direction: column;
         gap: 1.5em;
+        
 
         .heading {
             font-size: 2.5rem;
         }
 
+      
+
+            @media (max-width: 1000px) {
+               
+
+            }
+
+
         .work {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             gap: 2rem;
             justify-items: center;
+            justify-content: center;
+
+            @media (max-width: 1000px) {
+                & {
+                    display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                }
+                
+
+            }
+            
+
+            
 
             & > div {
                 background-color: purple;   
@@ -180,6 +293,7 @@ body::-webkit-scrollbar {
                 box-shadow: 3px 3px 12px rgb(0 0 0 / 20%);
                 position: relative;
                 max-width: 550px;
+                justify-self: center;
 
                 .project {
                     background-color: white;
@@ -275,12 +389,26 @@ body::-webkit-scrollbar {
             gap: 1.5rem;
             font-size: 1.5rem;
 
+            @media (max-width: 1000px) {
+                & {
+                    font-size: 1rem;
+                    padding-right: 20px;
+                }   
+            }
+
             .contact {
                 font-size: 3.5rem;
+
+                @media (max-width: 1000px) {
+                    & {
+                        font-size: 3rem;
+                    }   
+                }
             }
 
             .please {
                 width: 80%;
+                
             }
 
             .phone {
@@ -328,6 +456,4 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 1000px) {
 
-}
